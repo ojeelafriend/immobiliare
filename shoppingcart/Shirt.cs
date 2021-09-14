@@ -7,25 +7,40 @@ namespace shoppingcart
     class Shirt
     {
         private static int _quantity;
-        private decimal _price;
+        private const double price = 1000;
 
-        public Shirt(decimal price)
+        public Shirt()
         {
             _quantity++;
-            _price = price;
+            
         }
 
-        public static int getQuantityShirts()
+        public static int GetQuantityShirts()
         {
             return _quantity;
         }
 
-        public static int deleteQuiatityShirts()
+
+        public static int DeleteQuiatityShirts()
         {
-            _quantity--;
-            return _quantity;
+            return _quantity--;
         }
-    
+
+        public static double EvaluateDiscountRate()
+        {
+            if (_quantity >= 3 && _quantity <= 5)
+            {
+                return ((_quantity * Price) * 0.1) - Price;
+            } else if(_quantity > 5)
+            {
+                return ((_quantity * Price) * 0.1) - Price;
+            }
+            return 0;
+        }
+        public static double Price
+        {
+            get { return price; }
+        }
     }
 
 }
