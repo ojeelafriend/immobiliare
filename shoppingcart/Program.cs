@@ -7,7 +7,6 @@ namespace shoppingcart
         static void Main(string[] args)
         {
             bool reset = false;
-            const int price = 1000;
             string username;
             int option;
 
@@ -23,11 +22,11 @@ namespace shoppingcart
                 switch (option)
                 {
                     case 1:
-                        new Shirt(price);
+                        new Shirt();
                         showCartStatus();
                         break;
                     case 2:
-                        Shirt.deleteQuiatityShirts();
+                        Shirt.DeleteQuiatityShirts();
                         showCartStatus();
                         break;
                     case 3:
@@ -37,13 +36,13 @@ namespace shoppingcart
             } while (!reset);
 
             void showCartStatus()
-            {
+            { 
                 Console.WriteLine("******** Carrito de " + username + " ************");
-                Console.WriteLine("- Cantidad de camisas en el carro de compras: " + Shirt.getQuantityShirts());
-                Console.WriteLine("- Precio unitario: " + price);
-                Console.WriteLine("- Precio total sin descuento: $" + price * Shirt.getQuantityShirts());
-                // Faltan añadir los porcentajes.
-                Console.WriteLine("*********************");
+                Console.WriteLine("- Cantidad de camisas en el carro de compras: " + Shirt.Quantity);
+                Console.WriteLine("- Precio unitario: " + Shirt.Price);
+                Console.WriteLine("- Precio total sin descuento: $" + Shirt.TotalPrice);
+                Console.WriteLine("- Descuento aplicado: " + Shirt.DiscoutType);
+                Console.WriteLine("- Precio final con descuento: " + Shirt.EvaluateDiscountRate());
             }
         }
     }
