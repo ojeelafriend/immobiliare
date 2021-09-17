@@ -19,7 +19,7 @@ namespace shoppingcart
 
         public static int DeleteQuiatityShirts()
         {
-            return Quantity--;
+            return Quantity--;            
         }
 
         public static double EvaluateDiscountRate()
@@ -36,21 +36,23 @@ namespace shoppingcart
             return 0;
         }
 
-        //Getters
+        //Getters & Setters
         public static int Quantity
         {
             get { return _quantity; }
             private set { _quantity = value; }
         }
-       
+     
         public static double TotalPrice
         {
             get { return _totalPrice; }
         }
+
         public static double Price
         {
             get { return price; }
         }
+
         public static double DiscoutType
         {
             get { return _discountType; }
